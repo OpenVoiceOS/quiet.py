@@ -1,6 +1,9 @@
 quiet.py
 ========
 
+[![](https://img.shields.io/pypi/v/quiet.py.svg)](https://pypi.org/project/quiet.py/)
+
+
 Python ctypes bindings for libquiet to transmit data with sound.
 
 ## Install
@@ -14,7 +17,7 @@ to speed up the installation process, we can install `numpy` separately,
 as installing `numpy` via pip is slow.
 
 ```
-sudo pt install python-numpy
+sudo apt install python-numpy
 pip install --no-deps quiet.py
 ```
 
