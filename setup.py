@@ -7,6 +7,10 @@ import subprocess
 import os
 
 
+with open('README.md') as f:
+    long_description = f.read()
+
+
 class BuildPyCommand(build_py):
     """Custom build command."""
 
@@ -22,9 +26,11 @@ class BuildPyCommand(build_py):
         build_py.run(self)
 
 
-setup(name='quiet',
+setup(name='quiet.py',
       version='0.1',
-      description='Quiet Modem',
+      description='Quiet Modem, to transmit data with sound',
+      long_description=long_description,
+      long_description_content_type='text/markdown',
       author='Brian Armstrong, Yihui Xiong',
       author_email='brian.armstrong.ece+pypi@gmail.com',
       url='https://github.com/quiet/quiet.py',
@@ -33,4 +39,5 @@ setup(name='quiet',
       },
       packages=['quiet'],
       include_package_data=True,
+      install_requires=['numpy'],
       zip_safe=False)
