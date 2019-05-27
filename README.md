@@ -6,20 +6,28 @@ quiet.py
 
 Python ctypes bindings for libquiet to transmit data with sound.
 
+## Requirements
++ numpy
+
 ## Install
-Just run:
-```
-pip install quiet.py
-```
 
-For ARM platform such as Raspbian on Raspberry Pi, Armbian on Nanopi, 
-to speed up the installation process, we can install `numpy` separately,
-as installing `numpy` via pip is slow.
++ For ARM platform, binary package is available on pypi, just use `pip` to install it:
 
-```
-sudo apt install python-numpy
-pip install --no-deps quiet.py
-```
+  ```
+  sudo apt install python-numpy
+  pip install --no-deps quiet.py
+  ```
+  
+  We install `numpy` separately, as installing `numpy` via pip requires compiling numpy from source.
+  
++ For x86/amd64
+
+  ```
+  sudo apt install cmake
+  git clone https://github.com/xiongyihui/quiet.py && cd quiet.py
+  ./scripts/libs.sh
+  pip install .
+  ```
 
 
 ## Usage
@@ -44,6 +52,7 @@ test()
 
 ```
 import sys
+import numpy
 import pyaudio
 from quiet import Encode, Decoder
 
