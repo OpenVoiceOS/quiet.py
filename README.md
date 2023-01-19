@@ -13,7 +13,7 @@ Python ctypes bindings for libquiet to transmit data with sound.
 
 + For ARM platform, binary package is available on pypi, just use `pip` to install it:
 
-  ```
+  ```bash
   sudo apt install python-numpy
   pip install --no-deps quiet.py
   ```
@@ -22,9 +22,9 @@ Python ctypes bindings for libquiet to transmit data with sound.
   
 + For x86/amd64
 
-  ```
+  ```bash
   sudo apt install cmake
-  git clone https://github.com/xiongyihui/quiet.py && cd quiet.py
+  git clone https://github.com/OpenVoiceOS/quiet.py && cd quiet.py
   ./scripts/libs.sh
   pip install .
   ```
@@ -32,7 +32,7 @@ Python ctypes bindings for libquiet to transmit data with sound.
 
 ## Usage
 1. Encode a message, and then decode it
-```
+```python
 from quiet import Encode, Decoder
 
 def test():
@@ -50,7 +50,7 @@ test()
 
 2. decode messages from recording in realtime
 
-```
+```python
 import sys
 import numpy
 import pyaudio
